@@ -1,7 +1,8 @@
-import os
 import configparser
 
-DEFAULT_CONFIG_PATH = None
 
 class Config:
-    pass
+    def __init__(self, config_file_path):
+        self.config_file_path = config_file_path
+        self.config = configparser.ConfigParser()
+        self.config.read(config_file_path)
